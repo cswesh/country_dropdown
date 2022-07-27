@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Drop Down</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="drop-down-body">
+        <a href="#" class="drop-down-btn">
+            <img src="us.svg" alt="us" id="btn-img" class="language-img">
+            <h3 id="btn-title" class="language-title">US</h3>
+        </a>
+        <ul class="language-menu">
+            <li class="language-item" data-lang="de">
+                <img src="de.svg" alt="de" class="language-img">
+                <h3 class="language-title">DE</h3>
+            </li>
+            <li class="language-item" data-lang="us">
+                <img src="us.svg" alt="us" class="language-img">
+                <h3 class="language-title">US</h3>
+            </li>
+            <li class="language-item" data-lang="br">
+                <img src="br.svg" alt="br" class="language-img">
+                <h3 class="language-title">BR</h3>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var langitems = document.getElementsByClassName('language-item');
+        var btnImg = document.getElementById('btn-img');
+        var btnTitle = document.getElementById('btn-title');
+        for(var i=0; i<langitems.length; i++){
+            var langItem = langitems[i];
+            langItem.onclick = changeLanguage;
+        }
+        function changeLanguage(e){
+            btnImg.src = this.dataset.lang+'.svg'
+            btnTitle.innerText = this.dataset.lang;
+        }
+    </script>
+</body>
+</html>
